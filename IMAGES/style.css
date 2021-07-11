@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,200;1,300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    list-style: none;
+    scroll-behavior: smooth;
+    transition: 0.3s all ease;
+}
+body{
+    overflow-x: hidden;
+}
+.header{
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(rgba(31, 117, 216, 0.3),rgba(14, 66, 124, 0.308));
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.logo .title{
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+.logo .title span{
+    font-size: 1.3em;
+}
+.logo img{
+    width: 80px;
+}
+.navbar ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60vw;
+}
+.navbar ul a{
+    color: #000;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+}
+.navbar ul li{
+   padding: 10px 20px;
+}
+.navbar ul li:hover{
+        transform: translateY(-5px);
+        background: chartreuse;
+        color: white;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.7);
+}
+.banner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background-image: linear-gradient(rgba(0,168,255,0.2),rgba(0,168,255,0.3)),url('spectrumbanner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: polygon(100% 0%, 100% 80%, 50% 100%, 0% 80%, 0% 0%);
+}
+.navbar{
+    display: flex;
+    align-items: center;
+}
+.header .fa-bars{
+    font-size: 24px;
+    display: none;
+}
+@media(max-width:1000px){
+    .header{
+        justify-content: space-evenly;
+    }
+}
+@media(max-width:768px){
+    html{
+        font-size: 50%;
+    }
+    .header .fa-bars{
+        display: block;
+    }
+    .header .navbar{
+        position: fixed;
+        top: -120%; left: 0;
+        height: auto;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1000;
+        border-top: .1rem solid rgba(0, 0, 0, .3);
+    }
+    .header .navbar ul{
+        height: 100%;
+        width: 100%;
+        flex-flow: column;
+    }
+    .header .navbar ul li{
+        margin: 1rem 0;
+    }
+    .header .navbar ul li a{
+        color: #444;
+        font-size: 2.4rem;
+    }
+    .header .fa-times{
+        transform: rotate(180deg);
+    }
+    .header .nav-toggle{
+        top: 80px;
+    }
+}
